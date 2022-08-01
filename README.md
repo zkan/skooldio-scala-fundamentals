@@ -1,2 +1,1 @@
-# skooldio-scala-fundamentals
-Skooldio: Scala Fundamentals
+# Skooldio: Scala Fundamentals
