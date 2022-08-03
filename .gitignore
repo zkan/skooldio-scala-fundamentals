@@ -9,3 +9,4 @@ target/
 # Metals
 .metals
 .bloop
+.bsp
