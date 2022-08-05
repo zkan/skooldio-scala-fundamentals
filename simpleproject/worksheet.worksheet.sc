@@ -1,14 +1,14 @@
-class Person(var firstName: String, val lastName: String) {
-    println("begin of constructor")
-    println(firstName)
-    val age = 0
-    override def toString(): String = s"$firstName"
-    println("end of constructure")
-}
+// class Person(var firstName: String, val lastName: String) {
+//     println("begin of constructor")
+//     println(firstName)
+//     val age = 0
+//     override def toString(): String = s"$firstName"
+//     println("end of constructure")
+// }
 
-val kan = new Person("Kan", "Ouivirach")
-print(kan.firstName) 
-kan.toString
+// val kan = new Person("Kan", "Ouivirach")
+// print(kan.firstName) 
+// kan.toString
 
 class ScalaClass(value: String) {
     def oneParameter(x: String) = x
@@ -41,3 +41,35 @@ class Test {
 
 val test = new Test
 
+class Person {
+    var name: String = ""
+    var age: Int = 0
+    def accessPrivateInformation() = println(Person.privateFilename)
+}
+
+object Person {
+    def apply(name: String, age: Int) = {
+        var p = new Person
+        p.name = name
+        p.age = age
+        p
+    }
+
+    def apply(name: String) = {
+        var p = new Person
+        p.name = name
+        p
+    }
+
+    private val privateFilename = "/usr/save/private"
+}
+
+val person = new Person
+person.accessPrivateInformation()
+
+val p1 = Person("kan", 38)
+val p2 = Person("skooldio")
+p1.name
+p1.age
+p2.name
+p2.age
