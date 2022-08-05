@@ -41,35 +41,46 @@ class Test {
 
 val test = new Test
 
-class Person {
-    var name: String = ""
-    var age: Int = 0
-    def accessPrivateInformation() = println(Person.privateFilename)
-}
+// class Person {
+//     var name: String = ""
+//     var age: Int = 0
+//     def accessPrivateInformation() = println(Person.privateFilename)
+// }
 
-object Person {
-    def apply(name: String, age: Int) = {
-        var p = new Person
-        p.name = name
-        p.age = age
-        p
-    }
+// object Person {
+//     def apply(name: String, age: Int) = {
+//         var p = new Person
+//         p.name = name
+//         p.age = age
+//         p
+//     }
 
-    def apply(name: String) = {
-        var p = new Person
-        p.name = name
-        p
-    }
+//     def apply(name: String) = {
+//         var p = new Person
+//         p.name = name
+//         p
+//     }
 
-    private val privateFilename = "/usr/save/private"
-}
+//     private val privateFilename = "/usr/save/private"
+// }
 
-val person = new Person
-person.accessPrivateInformation()
+// val person = new Person
+// person.accessPrivateInformation()
+
+// val p1 = Person("kan", 38)
+// val p2 = Person("skooldio")
+// p1.name
+// p1.age
+// p2.name
+// p2.age
+
+// val p3 = Person("skooldio")
+
+// p2 == p3
+
+case class Person(name: String, age: Int) {}
 
 val p1 = Person("kan", 38)
-val p2 = Person("skooldio")
-p1.name
-p1.age
-p2.name
-p2.age
+val p2 = Person("kan", 38)
+p1 == p2
+p1.toString
