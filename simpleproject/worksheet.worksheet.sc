@@ -25,3 +25,19 @@ sc >> "Skooldio"
 
 sc.->:("Skooldio")
 "Skooldio" ->: sc
+
+object Logger {
+    def printSomething(message: String) = println(s"Message: $message")
+}
+
+class Project(name: String, dateToFinish: Int) {}
+
+class Test {
+    import Logger._
+    val project1 = new Project("a", 5)
+    val project2 = new Project("b", 3)
+    printSomething("2 projects created")
+}
+
+val test = new Test
+
