@@ -130,10 +130,10 @@ object States extends scala.Enumeration {
 
 case class Task(id: Int, title: String, var state: States.State) {
   import States._
-  def next() = {
-    if (state == Todo) state = Doing
-    else if (state == Doing) state = Done
-    else state = Done
+  def next(): Task = {
+    if (state == Todo) copy(state = Doing)
+    else if (state == Doing) copy(state = Done)
+    else this
   }
 }
 
@@ -144,3 +144,8 @@ buyBanana.next()
 buyBanana.state
 buyBanana.next()
 buyBanana.state
+
+val buyingBanana = buyBanana.next()
+buyingBanana
+val doneBanana = buyingBanana.next()
+doneBanana
