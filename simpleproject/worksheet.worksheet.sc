@@ -149,3 +149,10 @@ val buyingBanana = buyBanana.next()
 buyingBanana
 val doneBanana = buyingBanana.next()
 doneBanana
+
+val something = 1
+something match {
+  case 1 => println("one")
+  case 2 => println("two")
+  case _ => println("else")
+}
