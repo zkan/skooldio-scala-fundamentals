@@ -123,13 +123,20 @@ p1.toString
 
 // val buyBanana = Task(id = 0, title = "Buy Banana", state = 1)
 
-object States extends scala.Enumeration {
-  type State = Value
-  var Todo, Doing, Done = Value
-}
+// object States extends scala.Enumeration {
+//   type State = Value
+//   var Todo, Doing, Done = Value
+// }
 
-case class Task(id: Int, title: String, var state: States.State) {
-  import States._
+// object States {
+trait State
+case object Todo extends State
+case object Doing extends State
+case object Done extends State
+// }
+
+case class Task(id: Int, title: String, var state: State) {
+  // import States._
   def next(): Task = {
     if (state == Todo) copy(state = Doing)
     else if (state == Doing) copy(state = Done)
@@ -137,7 +144,7 @@ case class Task(id: Int, title: String, var state: States.State) {
   }
 }
 
-val buyBanana = Task(id = 0, title = "Buy Banana", state = States.Todo)
+val buyBanana = Task(id = 0, title = "Buy Banana More", state = Todo)
 buyBanana.next()
 buyBanana.state
 buyBanana.next()
