@@ -1,9 +1,9 @@
 package pizza
 
-class Customer (
-    var name: String,
-    var phone: String,
-    var address: Address
+case class Customer (
+    val name: String,
+    val phone: String,
+    val address: Address
 )
 
 

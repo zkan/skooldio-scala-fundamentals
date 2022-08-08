@@ -1,10 +1,10 @@
 package pizza
 
-class Address (
-    var street1: String,
-    var street2: String,
-    var city: String,
-    var state: String,
-    var zipCode: String
+case class Address (
+    val street1: String,
+    val street2: String,
+    val city: String,
+    val state: String,
+    val zipCode: String
 )
 
