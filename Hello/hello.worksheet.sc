@@ -31,3 +31,6 @@ def addOne(list: List[Int]) = {
 }
 
 addOne(list)
+
+list
+list.filter(_ != 2)
